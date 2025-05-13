@@ -9,6 +9,7 @@ pacman -S base-devel git
 git clone https://aur.archlinux.org/yay.git
 cd yay
 makepkg -rsic
+cd ..
 rm -rf yay
 yay -S yay
 ```
