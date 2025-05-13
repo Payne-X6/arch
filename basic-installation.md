@@ -16,7 +16,7 @@ yay -S yay
 
 ## Automatic update of mirrors
 
-First create `ghostmirror` user and setup new mirrorlist path (not created yet, but we will create it in the moment).
+First create `ghostmirror` system user account and setup new mirrorlist path (not created yet, but we will create it in the moment).
 
 ```bash
 sudo yay -S ghostmirror
@@ -26,7 +26,7 @@ sudo vim /etc/pacman.conf
 ```
 And edit paths at `[core] Include` and `[extra] Include` to `/home/ghostmirror/.config/ghostmirror/mirrorlist`.
 
-Now login as ghostmirror user and create `mirrorlist`. Then lock user.
+Now login as ghostmirror user and create `mirrorlist`. Then disable login and lock user.
 
 ```bash
 sudo su ghostmirror
@@ -35,6 +35,7 @@ mkdir -p .config/ghostmirror
 ghostmirror -PoclLS Czechia,Austria,Germany,Poland,Slovakia .config/ghostmirror/mirrorlist 30 state,outofdate,morerecent,ping
 ghostmirror -PoDumlsS  ~/.config/ghostmirror/mirrorlist ~/.config/ghostmirror/mirrorlist light state,outofdate,morerecent,extimated,speed
 exit
+sudo chsh -s /usr/bin/nologin ghostmirror
 sudo passwd -l ghostmirror
 ```
 
