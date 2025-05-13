@@ -205,7 +205,7 @@ Install GRUB splited between `/efi` and `/boot`  partitions.
 grub-install --target=x86_64-efi --efi-directory=/efi --boot-directory=/boot --bootloader-id=GRUB --modules=luks /dev/mapper/root
 ```
 
-Configure GRUB to decrypt BTRFS partition (must set UUID of whole BTRFS partition)
+Configure GRUB to load from encrypted partition (must set UUID of LUKS superblock - `<device>2`)
 
 ```bash
 vim /etc/default/grub
