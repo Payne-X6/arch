@@ -149,7 +149,8 @@ passwd -l root
 Then create admin user
 
 ```bash
-useradd -m -g users -G wheel <username>
+groupadd <username>
+useradd -m -g <username> -G users,wheel <username>
 passwd <username>
 ```
 
