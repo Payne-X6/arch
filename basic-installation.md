@@ -89,3 +89,15 @@ sudo systemctl enable grub-btrfsd
 sudo systemctl start grub-btrfsd
 sudo grub-mkconfig -o /boot/grub/grub.cfg
 ```
+
+Next you will need HOOK in `initramfs` to boot into `overlayfs`. This will change (by default) read-only snapshots "writable" similar way Live CDs does, means all changes are written on the RAM and lost after reboot.
+
+```bash
+sudo vim /etc/mkinitcpio.conf
+```
+
+And add at the end of HOOKS array `grub-btrfs-overlayfs`. Then re-generate `initramfs`.
+
+```bash
+sudo mkinitcpio -p linux
+```
