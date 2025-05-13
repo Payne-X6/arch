@@ -20,8 +20,7 @@ First create `ghostmirror` user and setup new mirrorlist path (not created yet, 
 
 ```bash
 sudo yay -S ghostmirror
-sudo groupadd ghostmirror
-sudo useradd -m -g ghostmirror ghostmirror
+sudo useradd --system -m -U ghostmirror
 sudo loginctl enable-linger ghostmirror
 sudo vim /etc/pacman.conf
 ```
