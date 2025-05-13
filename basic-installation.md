@@ -1,10 +1,10 @@
 # Arch Linux Basic Installation Guide
 
-This describes few additional steps to improve minimalistic Arch Linux user experience
+This describes few additional steps to improve minimalistic Arch Linux user experience. Login as admin user (not `root`)
 
 ## Install YAY package manager (for AUR packages)
 
-```
+```bash
 pacman -S base-devel git
 git clone https://aur.archlinux.org/yay.git
 cd yay
@@ -12,6 +12,31 @@ makepkg -rsic
 cd ..
 rm -rf yay
 yay -S yay
+```
+
+## Automatic update of mirrors
+
+First create `ghostmirror` user and setup new mirrorlist path (not created yet, but we will create it in the moment).
+
+```bash
+sudo yay -S ghostmirror
+sudo groupadd ghostmirror
+sudo useradd -m -g ghostmirror ghostmirror
+sudo loginctl enable-linger ghostmirror
+sudo vim /etc/pacman.conf
+```
+And edit paths at `[core] Include` and `[extra] Include` to `/home/ghostmirror/.config/ghostmirror/mirrorlist`.
+
+Now login as ghostmirror user and create `mirrorlist`. Then lock user.
+
+```bash
+sudo su ghostmirror
+cd ~
+mkdir -p .config/ghostmirror
+ghostmirror -PoclLS Czechia,Austria,Germany,Poland,Slovakia .config/ghostmirror/mirrorlist 30 state,outofdate,morerecent,ping
+ghostmirror -PoDumlsS  ~/.config/ghostmirror/mirrorlist ~/.config/ghostmirror/mirrorlist light state,outofdate,morerecent,extimated,speed
+exit
+sudo passwd -l ghostmirror
 ```
 
 ## Install and configure snapper, then allow automatic snapshots
@@ -38,7 +63,7 @@ sudo systemctl start snapper-cleanup.timer
 and then enable snapshot hook for `pacman`, that creates pre-post snapshots for each `pacman` run
 
 ```bash
-sudo pacman -S snap-pac # Install the snap-pac package for snapper integration with pacman;;;
+sudo pacman -S snap-pac
 ```
 
 Finally install and configure `snapper-rollback`
@@ -49,3 +74,12 @@ vim /etc/snapper-rollback.conf
 ```
 
 And edit `subvol_snapshots` to use your `@.snapshots` subvolume, then edit `mountpoint` to use your root mountpoint (e.g. `\.btrfsroot`).
+
+Optionaly you can install grub-btrfs to add BTRFS snapshots to GRUB entries
+
+```bash
+sudo pacman -S grub-btrfs inotify-tools
+sudo systemctl enable grub-btrfsd
+sudo systemctl start grub-btrfsd
+sudo grub-mkconfig -o /boot/grub/grub.cfg
+```
