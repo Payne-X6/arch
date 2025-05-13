@@ -66,7 +66,7 @@ mount --mkdir /dev/vda1 /mnt/efi
 First setup `pacman` mirrors
 
 ```bash
-reflector -c Czechia -a 12 --sort rate --save /etc/pacman.d/mirrorlist # Set the fastest mirrors for pacman in Czechia
+reflector -c Czechia -a 12 --sort rate --save /etc/pacman.d/mirrorlist
 ```
 
 Install some basic packages. Change `vim` to your prefered text editor. `dhcpcd` is for DHCP network setting.
