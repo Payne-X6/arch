@@ -39,9 +39,11 @@ exit
 sudo passwd -l ghostmirror
 ```
 
-## Install and configure snapper, then allow automatic snapshots
+## Snapshot automatization
 
-Install and configure snapper
+### Install snapper
+
+For snapshot management install and configure snapper
 
 ```bash
 pacman -S snapper
@@ -51,7 +53,9 @@ sudo snapper -c root create-config /
 sudo mount /.snapshots
 ```
 
-Then enable basic timers for snapper
+### Automatization of snapshots
+
+Optionaly, you can allow and start snapper timers for automatization
 
 ```bash
 sudo systemctl enable snapper-timeline.timer
@@ -60,13 +64,15 @@ sudo systemctl start snapper-timeline.timer
 sudo systemctl start snapper-cleanup.timer
 ```
 
-and then enable snapshot hook for `pacman`, that creates pre-post snapshots for each `pacman` run
+and then enable snapshots hook for `pacman`, that creates pre-post snapshots for each `pacman` run
 
 ```bash
 sudo pacman -S snap-pac
 ```
 
-Finally install and configure `snapper-rollback`
+### Snapshot rollbacks
+
+Optionaly install and configure `snapper-rollback` for easy rollback between snapshots.
 
 ```bash
 yay -S snapper-rollback
@@ -75,7 +81,7 @@ vim /etc/snapper-rollback.conf
 
 And edit `subvol_snapshots` to use your `@.snapshots` subvolume, then edit `mountpoint` to use your root mountpoint (e.g. `\.btrfsroot`).
 
-Optionaly you can install grub-btrfs to add BTRFS snapshots to GRUB entries
+Optionaly you can install `grub-btrfs` to add BTRFS snapshots to GRUB entries automatically
 
 ```bash
 sudo pacman -S grub-btrfs inotify-tools
