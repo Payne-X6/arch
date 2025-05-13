@@ -1,6 +1,6 @@
-# Arch Linux Installation Guide
+# Arch Linux Minimal Installation Guide
 
-This document describes the steps to install Arch Linux on UEFI using the Btrfs file system and disk encryption with LUKS over whole disk (/boot included). Because of it we can't use `systemd-boot` so `grub` was picked.
+This document describes my prefered steps to install minimalistic Arch Linux on UEFI using the Btrfs file system and disk encryption with LUKS over whole disk (`/boot` included). Because of it we can't use `systemd-boot` so `grub` was picked.
 
 Boot into `archiso`.
 
