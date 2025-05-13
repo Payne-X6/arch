@@ -2,6 +2,12 @@
 
 This describes few additional steps to improve minimalistic Arch Linux user experience. Login as admin user (not `root`)
 
+## Install manpages
+
+```bash
+sudo pacman -S man-db man-pages
+```
+
 ## Install YAY package manager (for AUR packages)
 
 ```bash
