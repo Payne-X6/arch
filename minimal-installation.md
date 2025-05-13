@@ -72,7 +72,7 @@ reflector -c Czechia -a 12 --sort rate --save /etc/pacman.d/mirrorlist
 Install some basic packages. Change `vim` to your prefered text editor. `dhcpcd` is for DHCP network setting.
 
 ```bash
-pacstrap /mnt base linux linux-firmware grub efibootmgr dhcpcd vim
+pacstrap /mnt base linux linux-firmware grub efibootmgr dhcpcd sudo vim
 ```
 
 Create `fstab` of your system.
@@ -152,6 +152,14 @@ Then create admin user
 useradd -m -g users -G wheel <username>
 passwd <username>
 ```
+
+and allow `wheel` group in `sudoer`
+
+```bash
+visudo
+```
+
+and uncoment `%wheel ALL=(ALL ALL) ALL` line.
 
 ## Configure bootloader
 
