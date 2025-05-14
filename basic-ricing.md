@@ -1,5 +1,12 @@
 # Ricing of basic installation
 
+## Neofetch
+
+```bash
+sudo pacman -S neofetch
+echo -e "\nneofetch" >> .bashrc
+```
+
 ## Vim
 
 ```bash
