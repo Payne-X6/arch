@@ -11,7 +11,7 @@ sudo pacman -S man-db man-pages
 ## Install YAY package manager (for AUR packages)
 
 ```bash
-pacman -S base-devel git
+sudo pacman -S base-devel git
 git clone https://aur.archlinux.org/yay.git
 cd yay
 makepkg -rsic
