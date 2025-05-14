@@ -33,7 +33,7 @@ And map decrypted disc into mapper (eg. `/dev/mapper/root`)
 ```bash
 cryptsetup luksOpen <disk>2 root
 ```
-Format and mount decrypted disk. Create BTRFS subvolumes, we need `@var_log` to be able read logs after rollback, `@.snapshots` as snapshot storage, `@swap` for swapfile (skip all related instructions if you don't want to use swapfile). I also create `@home` subvolume.
+Format and mount decrypted disk. Create BTRFS subvolumes, we need `@var_log` to be able read logs from previous boot after rollback, `@.snapshots` as snapshot storage, `@swap` for swapfile (skip all related instructions if you don't want to use swapfile). I also create `@home` subvolume. Note, that only subvolumes that you define will do snapshots (in my case only `@`). All other subvolumes will be in latest state after rollback (`/home`, `/var/log`, `/swap` and `/.snapshots` will not roll back in this case).
 
 ```bash
 mkfs.btrfs /dev/mapper/root
