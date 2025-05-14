@@ -91,6 +91,8 @@ vim /etc/snapper-rollback.conf
 
 And edit `subvol_snapshots` to use your `@.snapshots` subvolume, then edit `mountpoint` to use your root mountpoint (e.g. `\.btrfsroot`).
 
+### Snapshots entries at GRUB
+
 Optionaly you can install `grub-btrfs` to add BTRFS snapshots to GRUB entries automatically
 
 ```bash
