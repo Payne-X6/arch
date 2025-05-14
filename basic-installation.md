@@ -32,7 +32,7 @@ sudo vim /etc/pacman.conf
 ```
 And edit paths at `[core] Include` and `[extra] Include` to `/home/ghostmirror/.config/ghostmirror/mirrorlist`.
 
-Now login as ghostmirror user and create `mirrorlist`. Then disable login and lock user.
+Now login as ghostmirror user and create `mirrorlist`. Then cleanup home directory, disable login and lock user.
 
 ```bash
 sudo su ghostmirror
@@ -43,6 +43,10 @@ ghostmirror -PoDumlsS  ~/.config/ghostmirror/mirrorlist ~/.config/ghostmirror/mi
 exit
 sudo chsh -s /usr/bin/nologin ghostmirror
 sudo passwd -l ghostmirror
+sudo rm ~ghostmirror/.bash_history
+sudo rm ~ghostmirror/.bash_logout
+sudo rm ~ghostmirror/.bash_profile
+sudo rm ~ghostmirror/.bashrc
 ```
 
 ## Snapshot automatization
