@@ -1,5 +1,31 @@
 # Ricing of basic installation
 
+## Bash
+
+### Default .bashrc
+
+You can install default Arch `.bashrc` by 
+
+```bash
+sudo cat /etc/bash.bashrc > .bashrc
+```
+
+### Custom .bashrc
+
+Install this file
+
+It has already setup custom prompt and neofetch print on startup.
+
+### Completion by tab
+
+Install
+
+```bash
+sudo pacman -S bash-completion
+```
+
+and use default or custom `.bashrc` above, not the profile default.
+
 ## Neofetch
 
 ```bash
