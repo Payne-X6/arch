@@ -35,7 +35,14 @@ echo -e "\nneofetch" >> .bashrc
 
 ## Vim
 
+Install some ricing dependencies
+
 ```bash
 sudo pacman -S git ctags ncurses curl vim
+```
+
+and use [vim/.vimrc](vim/.vimrc), or download vim-bootstraped `.vimrc`
+
+```bash
 curl 'https://vim-bootstrap.com/generate.vim' --data 'editor=vim' > .vimrc
 ```
