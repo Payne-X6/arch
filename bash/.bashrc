@@ -21,7 +21,7 @@ if [[ -r /usr/share/bash-completion/bash_completion ]]; then
 fi
 
 # Shell prompt setup
-##   username          @                hostname          :                cwd               $/#                clear
+##   username          @                hostname          :                cwd               $/#                cleanup
 PS1="\[\e[38;5;160m\]\u\[\e[38;5;166m\]@\[\e[38;5;172m\]\h\[\e[38;5;178m\]:\[\e[38;5;184m\]\w\[\e[38;5;190m\]\\$\[\033[0m\] "
 
 # Aliases
