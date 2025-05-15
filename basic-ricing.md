@@ -12,7 +12,7 @@ sudo cat /etc/bash.bashrc > .bashrc
 
 ### Custom .bashrc
 
-Install this file
+Install [bash/.bashrc](bash/.bashrc) file into home directory.
 
 It has already setup custom prompt and neofetch print on startup.
 
