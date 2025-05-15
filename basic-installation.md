@@ -43,10 +43,7 @@ ghostmirror -PoDumlsS  ~/.config/ghostmirror/mirrorlist ~/.config/ghostmirror/mi
 exit
 sudo chsh -s /usr/bin/nologin ghostmirror
 sudo passwd -l ghostmirror
-sudo rm ~ghostmirror/.bash_history
-sudo rm ~ghostmirror/.bash_logout
-sudo rm ~ghostmirror/.bash_profile
-sudo rm ~ghostmirror/.bashrc
+sudo rm -r ~ghostmirror/.bash*
 ```
 
 ## Snapshot automatization
