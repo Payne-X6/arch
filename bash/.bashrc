@@ -20,7 +20,12 @@ export HISTCONTROL="erasedups:ignorespace"
 
 # Enable bash completion
 if [[ -r /usr/share/bash-completion/bash_completion ]]; then
-  . /usr/share/bash-completion/bash_completion
+  source /usr/share/bash-completion/bash_completion
+fi
+
+# Enable 'Command not found' hook
+if [[ -r /usr/share/doc/pkgfile/command-not-found.bash ]]; then
+  source /usr/share/doc/pkgfile/command-not-found.bash
 fi
 
 # Shell prompt setup
