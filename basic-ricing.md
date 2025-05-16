@@ -1,4 +1,12 @@
-# Ricing of basic installation
+# Ricing of minimalistic installation
+
+# Faster boot
+
+LUKS partition with default number of iterations can take a while to open, when using GRUB with PBKDF2. Change number of iterations, use at least 1000 `<iterations>`, default/set value can be obtained from `sudo cryptsetup luksDump /dev/vda2`.
+
+```
+sudo cryptsetup luksChangeKey --key-slot=0 --pbkdf=pbkdf2 --pbkdf-force-iterations=<iterations> /dev/sda3
+```
 
 ## Bash
 
