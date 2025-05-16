@@ -38,6 +38,9 @@ alias ls='ls --color=auto'
 alias sudo='sudo -E'
 
 # Startup
+[[ -n "$__RUN_ONCE" ]] && return || export __RUN_ONCE=1
+
+clear
 if [[ -n `which neofetch` ]]; then
   neofetch
 fi
