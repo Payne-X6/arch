@@ -38,10 +38,19 @@ and use default or custom `.bashrc` above, not the profile default.
 
 ## Neofetch
 
+To install, run
+
 ```bash
 sudo pacman -S neofetch
+```
+
+In `bash/.bashrc` file, `neofetch` is already setup to run on open new bash. If you want to add it to your setup, run something like this
+
+```bash
 echo -e "\nneofetch" >> .bashrc
 ```
+
+or just copy my code from `bash/.bashrc` file (there is a check if `neofetch` is available).
 
 ## Vim
 
