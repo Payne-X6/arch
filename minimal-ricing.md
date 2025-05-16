@@ -36,6 +36,12 @@ sudo pacman -S bash-completion
 
 and use default or custom `.bashrc` above, not the profile default.
 
+Optionaly, you can enable fast completion by call
+
+```bash
+echo "set show-all-if-ambiguous on" >> .inputrc
+```
+
 ### Command not found hook
 
 Install `pkgfile` package and update database, allow automatic update of database
