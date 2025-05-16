@@ -36,6 +36,22 @@ sudo pacman -S bash-completion
 
 and use default or custom `.bashrc` above, not the profile default.
 
+### Command not found hook
+
+Install `pkgfile` package and update database, allow automatic update of database
+
+```bash
+sudo pacman -S pkgfile
+sudo pkgfile --update
+sudo systemctl enable pkgfile-update.timer
+sudo systemctl start pkgfile-update.timer
+```
+Then load `/usr/share/doc/pkgfile/command-not-found.bash` and/or add to your `.bashrc`.
+
+```bash
+source /usr/share/doc/pkgfile/command-not-found.bash
+```
+
 ## Neofetch
 
 To install, run
