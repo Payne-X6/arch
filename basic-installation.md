@@ -67,8 +67,10 @@ Optionaly, you can allow and start snapper timers for automatization
 ```bash
 sudo systemctl enable snapper-timeline.timer
 sudo systemctl enable snapper-cleanup.timer
+sudo systemctl enable snapper-boot.timer
 sudo systemctl start snapper-timeline.timer
 sudo systemctl start snapper-cleanup.timer
+sudo systemctl start snapper-boot.timer
 ```
 
 and then enable snapshots hook for `pacman`, that creates pre-post snapshots for each `pacman` run
