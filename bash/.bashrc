@@ -19,14 +19,10 @@ fi
 export HISTCONTROL="erasedups:ignorespace"
 
 # Enable bash completion
-if [[ -r /usr/share/bash-completion/bash_completion ]]; then
-  source /usr/share/bash-completion/bash_completion
-fi
+[[ -r /usr/share/bash-completion/bash_completion ]] && source /usr/share/bash-completion/bash_completion
 
 # Enable 'Command not found' hook
-if [[ -r /usr/share/doc/pkgfile/command-not-found.bash ]]; then
-  source /usr/share/doc/pkgfile/command-not-found.bash
-fi
+[[ -r /usr/share/doc/pkgfile/command-not-found.bash ]] && source /usr/share/doc/pkgfile/command-not-found.bash
 
 # Shell prompt setup
 ##   username          @                hostname          :                cwd               $/#                cleanup
@@ -41,6 +37,4 @@ alias sudo='sudo -E'
 [[ -n "$__RUN_ONCE" ]] && return || export __RUN_ONCE=1
 
 clear
-if [[ -n `which neofetch` ]]; then
-  neofetch
-fi
+[[ -n `which neofetch` ]] && neofetch
