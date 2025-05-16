@@ -15,6 +15,9 @@ if [[ -z "${BASHRCSOURCED}" ]]; then
   esac
 fi
 
+# Setup history
+export HISTCONTROL="erasedups:ignorespace"
+
 # Enable bash completion
 if [[ -r /usr/share/bash-completion/bash_completion ]]; then
   . /usr/share/bash-completion/bash_completion
