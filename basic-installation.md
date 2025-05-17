@@ -37,9 +37,8 @@ Now login as ghostmirror user and create `mirrorlist`. Then cleanup home directo
 ```bash
 sudo su ghostmirror
 cd ~
-mkdir -p .config/ghostmirror
-ghostmirror -PoclLS Czechia,Austria,Germany,Poland,Slovakia .config/ghostmirror/mirrorlist 30 state,outofdate,morerecent,ping
-ghostmirror -PoDumlsS  ~/.config/ghostmirror/mirrorlist ~/.config/ghostmirror/mirrorlist light state,outofdate,morerecent,extimated,speed
+ghostmirror -PoclLS Czechia,Austria,Germany,Poland,Slovakia mirrorlist 30 state,outofdate,morerecent,ping
+ghostmirror -PoDumlsS  mirrorlist mirrorlist light state,outofdate,morerecent,extimated,speed
 exit
 sudo chsh -s /usr/bin/nologin ghostmirror
 sudo passwd -l ghostmirror
