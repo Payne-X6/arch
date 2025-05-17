@@ -1,5 +1,6 @@
 #
 ## SDDM
+### Theme
 
 ```bash
 yay -S sddm-sugar-candy-git
