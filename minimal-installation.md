@@ -80,7 +80,7 @@ reflector -c Czechia -a 12 --sort rate --save /etc/pacman.d/mirrorlist
 Install some basic packages. Change `vim` to your prefered text editor. `dhcpcd` is for DHCP network setting.
 
 ```bash
-pacstrap /mnt base linux linux-firmware grub efibootmgr dhcpcd sudo vim iwctl
+pacstrap /mnt base linux linux-firmware grub efibootmgr sudo vim dhcpcd iwd
 ```
 
 Create `fstab` of your system.
