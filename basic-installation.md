@@ -51,7 +51,7 @@ sudo rm -r ~ghostmirror/.bash*
 For snapshot management install and configure snapper
 
 ```bash
-pacman -S snapper
+sudo pacman -S snapper
 sudo umount /.snapshots
 sudo rmdir /.snapshots
 sudo snapper -c root create-config /
