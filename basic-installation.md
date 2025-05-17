@@ -30,7 +30,7 @@ sudo useradd --system -m -U ghostmirror
 sudo loginctl enable-linger ghostmirror
 sudo vim /etc/pacman.conf
 ```
-And edit paths at `[core] Include` and `[extra] Include` to `/home/ghostmirror/.config/ghostmirror/mirrorlist`.
+And edit paths at `[core] Include` and `[extra] Include` to `/home/ghostmirror/mirrorlist`.
 
 Now login as ghostmirror user and create `mirrorlist`. Then cleanup home directory, disable login and lock user.
 
