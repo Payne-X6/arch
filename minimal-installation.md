@@ -61,6 +61,14 @@ swapon /mnt/swap/swapfile
 mount --mkdir /dev/vda1 /mnt/efi
 ```
 
+## Connect to wifi
+
+You can (if you need) connect co Wi-Fi by
+
+```bash
+iwctl --passphrase "<password>" station wlan0 connect <ssid>
+```
+
 ## Install base system
 
 First setup `pacman` mirrors
