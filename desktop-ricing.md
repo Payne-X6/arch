@@ -3,7 +3,7 @@
 ### Theme
 
 ```bash
-pacman -S qt5-graphicaleffects qt5-declarative
+sudo pacman -S qt5-graphicaleffects qt5-declarative
 yay -S sddm-sugar-candy-git
 mkdir /etc/sddm.conf.d
 ```
