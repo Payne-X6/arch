@@ -35,8 +35,7 @@ And edit paths at `[core] Include` and `[extra] Include` to `/home/ghostmirror/m
 Now login as ghostmirror user and create `mirrorlist`. Then cleanup home directory, disable login and lock user.
 
 ```bash
-sudo su ghostmirror
-cd ~
+sudo machinectl shell ghostmirror@
 ghostmirror -PoclLS Czechia,Austria,Germany,Poland,Slovakia mirrorlist 30 state,outofdate,morerecent,ping
 ghostmirror -PoDumlsS  mirrorlist mirrorlist light state,outofdate,morerecent,extimated,speed
 exit
