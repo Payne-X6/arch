@@ -25,7 +25,7 @@ yay -S yay
 First create `ghostmirror` system user account and setup new mirrorlist path (not created yet, but we will create it in the moment).
 
 ```bash
-sudo yay -S ghostmirror
+yay -S ghostmirror
 sudo useradd --system -m -U ghostmirror
 sudo loginctl enable-linger ghostmirror
 sudo vim /etc/pacman.conf
