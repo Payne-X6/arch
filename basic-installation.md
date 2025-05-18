@@ -20,6 +20,14 @@ rm -rf yay
 yay -S yay
 ```
 
+## Enable NTP
+
+To have date and time always in sync, use
+
+```bash
+timedatectl set-ntp true
+```
+
 ## Automatic update of mirrors
 
 First create `ghostmirror` system user account and setup new mirrorlist path (not created yet, but we will create it in the moment).
