@@ -1,4 +1,4 @@
-#
+# Desktop Ricing
 ## SDDM
 ### Theme
 
