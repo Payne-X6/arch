@@ -17,7 +17,19 @@ sudo pacman -S sddm uwsm
 
 ### Desktop compositor
 
-First install vulkan graphics driver
+First install vulkan graphics driver.
+
+```bash
+sudo pacman -S vulkan vulkan-icd-loader vulkan-tools
+```
+
+For SW rendering
+
+```bash
+sudo pacman -S vulkan-swrast
+```
+
+For virtio rendering
 
 ```bash
 sudo pacman -S vulkan-virtio
