@@ -110,3 +110,26 @@ And add at the end of HOOKS array `grub-btrfs-overlayfs`. Then re-generate `init
 ```bash
 sudo mkinitcpio -p linux
 ```
+
+### Hibernation
+
+Add hook `resume` into `initramfs`
+
+```bash
+vim /etc/mkinitcpio.conf
+```
+
+should be behind `filesystem` hook.
+
+Get UUID of mapped crypto device and offset of the swapfile
+
+```bash
+sudo blkid /dev/mapper/root
+sudo btrfs inspect-internal map-swapfile -r /swap/swapfile
+```
+
+and add these values into `GRUB_CMDLINE_LINUX_DEFAULT`
+
+```bash
+resume=UUID=<CRYPT-MAPPER-UUID> resume_offset=<SWAP-OFFSET>
+```
