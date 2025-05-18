@@ -79,7 +79,7 @@ or just copy my code from `bash/.bashrc` file (there is a check if `neofetch` is
 Install some ricing dependencies
 
 ```bash
-sudo pacman -S git ctags ncurses curl vim
+sudo pacman -S git ctags ncurses curl vim python
 ```
 
 and use [vim/.vimrc](vim/.vimrc), or download vim-bootstraped `.vimrc`
