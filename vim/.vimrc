@@ -139,6 +139,7 @@ syntax on
 set ruler
 set number
 set relativenumber
+set nowrap
 
 let no_buffers_menu=1
 colorscheme molokai
