@@ -13,5 +13,13 @@ And usy my theme configuration file
 or create theme configuration file
 
 ```bash
-echo -e "[Theme]\nCurrent=sugar-candy > /etc/sddm.conf.d/20-theme.conf
+echo -e "[Theme]\nCurrent=sugar-candy > /etc/sddm.conf.d/30-theme.conf
+```
+
+## Hypr*
+### Theme
+
+```bash
+yay -S ml4w-hyprland
+ml4w-hyprland-setup
 ```
