@@ -35,6 +35,7 @@ First create `ghostmirror` system user account and setup new mirrorlist path (no
 ```bash
 yay -S ghostmirror
 sudo useradd --system -m -U ghostmirror
+sudo chmod 711 ~ghostmirror
 sudo loginctl enable-linger ghostmirror
 sudo vim /etc/pacman.conf
 ```
