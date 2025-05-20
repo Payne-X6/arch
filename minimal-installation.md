@@ -9,7 +9,7 @@ Boot into `archiso`.
 Choose a disk to install on, and run `fdisk` or any other alternative (shortcuts later could be different). `<disk>` is disk you choose to install on, for example `/dev/vda` for virtual machine disk.
 
 ```bash
-fdisk /dev/vda <disk>
+fdisk <disk>
 ```
 
 Set GPT partition table (`g`). Create new EFI partition (`n`) on the default start of the disc, with size around `+512M`. Set partition type (`t`) to EFI System (`1`). Create BTRFS partition, can be set to rest of the disk, because all other partitions can be subvolume of BTRFS. Type should be already Linux Filesystem (`20`). Write changes (`w`).
