@@ -4,7 +4,7 @@
 ### Audio server
 
 ```bash
-sudo pacman -S pipewire pipewire-audio
+sudo pacman -S pipewire pipewire-audio wireplumber
 systemctl --user enable pipewire
 systemctl --user start pipewire
 ```
@@ -20,7 +20,7 @@ sudo pacman -S sddm uwsm
 First install vulkan graphics driver.
 
 ```bash
-sudo pacman -S vulkan vulkan-icd-loader vulkan-tools
+sudo pacman -S vulkan-icd-loader vulkan-tools
 ```
 
 For SW rendering
@@ -44,7 +44,7 @@ sudo pacman -S hyprland
 or you can install whole ecosystem at once
 
 ```bash
-sudo pacman -S hyprpaper hyprland hypridle hyprlock hyprcursor hyprpolkitagent hyprsunset
+sudo pacman -S hyprpaper hyprland hypridle hyprlock hyprcursor hyprpolkitagent hyprsunset xdg-desktop-portal-hyprland
 ```
 
 omited `hyprpicker`, for me it's useless applicaiton.
